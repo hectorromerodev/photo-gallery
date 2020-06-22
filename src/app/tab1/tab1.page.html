@@ -7,5 +7,52 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
+  <ion-grid>
+    <ion-row>
+      <!-- <ion-col size="12"> -->
+        <!-- <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
+          <ion-img src="{{photo.base64 ? photo.base64 : photo.webviewPath}}"
+          (click)="showActionSheet(photo, position)"></ion-img>
+        </ion-col> -->
+        <!-- <ion-list>
+          <ion-item *ngFor="let photo of photoService.photos; index as position" text-wrap>
+            <ion-thumbnail slot="start">
+              <ion-img src="{{photo.base64 ? photo.base64 : photo.webviewPath}}"></ion-img>
+            </ion-thumbnail>
+            <ion-label>
+              {{ photo.filepath }}
+            </ion-label>
+          <ion-button slot="end" fill="clear" >
+              <ion-icon slot="icon-only" name="camera"></ion-icon>
+            </ion-button>
+            <ion-button slot="end" fill="clear" (click)="showActionSheet(photo, position)">
+              <ion-icon slot="icon-only" name="trash"></ion-icon>
+            </ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-col> -->
+      <ion-col size="12">
+        <ion-item text-wrap>
+          <ion-label>
+              Adelante
+            </ion-label>
+          <ion-thumbnail slot="start">
+            <ion-img type="button" (click)="photoService.addNewToGallery('1')" src="{{photoService.photo1[0].base64 ? photoService.photo1[0].base64 : photoService.photo1[0].webviewPath}}" ></ion-img>
+          </ion-thumbnail>
+          <ion-button slot="end" fill="clear" (click)="photoService.addNewToGallery('1')">
+            <ion-icon slot="icon-only" name="camera"></ion-icon>
+          </ion-button>
+        </ion-item>
+        <ion-item text-wrap>
+          <ion-label>Atras</ion-label>
+          <ion-thumbnail slot="start">
+            <ion-img type="button" (click)="photoService.addNewToGallery('2')" src="{{photoService.photo2[0].base64 ? photoService.photo2[0].base64 : photoService.photo2[0].webviewPath}}"></ion-img>
+          </ion-thumbnail>
+          <ion-button slot="end" fill="clear" (click)="photoService.addNewToGallery('2')">
+            <ion-icon slot="icon-only" name="camera"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
